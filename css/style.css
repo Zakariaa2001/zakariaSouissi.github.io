@@ -1,0 +1,736 @@
+:root {
+    --main-color: rgb(77, 190, 123);
+    --white-color: white;
+    --primary-color: #f5f5f5;
+    --second-color: #4e4e4e;
+}
+
+/* start components */
+.margineTop {
+    margin-top: 10px;
+}
+
+.main-heading {
+    text-align: center;
+}
+
+.main-heading h2 {
+    font-weight: normal;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.main-heading h2::before {
+    content: "";
+    background-color: var(--second-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 120px;
+    bottom: -32px;
+}
+
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    bottom: -38px;
+    background-color: var(--primary-color);
+}
+
+/* end components */
+
+
+/* start global rules */
+* {
+    font-family: 'Cairo', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.spanup {
+    position: fixed;
+    bottom: 30px;
+    right: -40px;
+    color: var(--white-color);
+    background-color: var(--main-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 30;
+}
+
+.show-up {
+    right: 10px;
+}
+
+.dark-theme {
+    --primary-color: #1A1A1D;
+    --second-color: #F8F8F2;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--second-color);
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--second-color);
+}
+
+/* start header */
+header .container .links {
+    flex: 1;
+}
+
+/* small sizing */
+@media (max-width:768px) {
+    header {
+        width: 100%;
+        height: 12%;
+        position: fixed;
+        bottom: 0;
+        top: -24px;
+        z-index: 999;
+        background-color: var(--white-color);
+        margin-bottom: 50px;
+        /* border-radius: 20px 20px 0 0; */
+    }
+
+    header .nav_links {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    .links {
+        position: fixed;
+        bottom: -1000px;
+        width: 100%;
+    }
+
+    header .links ul li a,
+    header .links ul li i,
+    header .nav_btns i,
+    header .container .icon a {
+        color: #4e4e4e;
+    }
+
+    .nav_btns {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+
+    }
+
+    header .icon {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+
+    }
+
+    .activeD {
+        display: none;
+    }
+
+    .active {
+        position: static;
+    }
+
+    header .links .nav_links li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
+header .links .nav_links li:hover a,
+header .links .nav_links li:hover i {
+    color: var(--main-color);
+}
+
+header .links .nav_links li a {
+    height: 40px;
+}
+
+header .links .nav_links li:hover a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    background-color: var(--main-color);
+    width: 80%;
+    animation-name: width-change;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes width-change {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .links .nav_links li:hover a::after {
+        content: "";
+        display: block;
+        height: 0px;
+        width: 0%;
+        animation-name: width-change;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes width-change {
+        0% {
+            width: 0%;
+        }
+
+        100% {
+            width: 0%;
+        }
+    }
+
+
+}
+
+header .nav_btns i:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* end header */
+/* start main section  */
+section.main {
+    margin-top: 70px;
+}
+
+section .description .name {
+    letter-spacing: 2px;
+    border-right: 1px solid var(--main-color);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 4s steps(28),
+        cursor .2s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent
+    }
+
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+}
+
+@media (min-width: 990px) and (max-width: 1115px) {
+    section .description .name {
+        width: 115%;
+    }
+}
+
+
+
+section.main .networking-links li:hover a {
+    color: var(--main-color);
+
+}
+
+section.main .main-content .image img {
+    border-radius: 51% 49% 48% 52% / 30% 30% 70% 70%;
+    background-color: var(--main-color);
+    width: 329px;
+    height: 329px;
+}
+
+.main .description a {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    /* color: var(--main-color); */
+}
+
+.main .description a:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 992px) {
+    section.main .main-content .secondBox {
+        order: 1;
+    }
+}
+
+/* end main section  */
+/* start about  */
+.about .about-content .image {
+    position: relative;
+    max-height: 350px;
+}
+
+.about .about-content .image .bottom-lay {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    border: 2px solid var(--main-color);
+    width: 100%;
+    height: 80%;
+    z-index: -2;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+@media screen and (max-width:991px) {
+    .about .about-content .image .bottom-lay {
+        height: 100%;
+    }
+}
+
+.about .about-content .image:hover .bottom-lay {
+    content: 'd';
+    right: 10px;
+    top: 10px;
+
+}
+
+.about .about-content .image img {
+    border-radius: 5px;
+    background-color: var(--main-color);
+}
+
+.about .about-content .image:hover .overlay {
+    background-color: transparent;
+}
+
+.about .about-content .me p {
+    line-height: 1.6;
+}
+
+.about .about-content .me a {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    /* color: var(--main-color); */
+}
+
+.about .about-content .me a:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+/* end about  */
+/* start skills */
+.skills .skills-content .dropdown-menu {
+    transform: translate(10px, 59px) !important;
+}
+
+.skills .skills-content .btn-drop {
+    border: none;
+    background-color: transparent;
+    color: var(--second-color);
+}
+
+.skills .skills-content .down .show-skills {
+    background-color: transparent;
+    border: none;
+}
+
+.skills .skills-content .down ul li div {
+    color: var(--second-color);
+}
+
+.skills .skills-content .down i {
+    color: var(--main-color);
+}
+
+.skills .skills-content .show-skills li .progress {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(77 190 123 / 44%);
+    margin-top: 15px;
+}
+
+.skills .skills-content .show-skills li span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 0.3s linear;
+}
+
+/* school */
+.skills .timeLine {
+    position: relative;
+    max-width: 1200px;
+    margin: 50px auto;
+
+}
+
+.skills .timeLine .box {
+    padding: 10px 50px;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+}
+
+.activeAnimation {
+    animation: moveDown 1s linear forwards;
+}
+
+@keyframes moveDown {
+    0% {
+        opacity: 1;
+        transform: translateY(-30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.skills .timeLine .box:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.skills .timeLine .box:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.skills .timeLine .box:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.skills .timeLine .text-box {
+    padding: 20px 30px;
+    background-color: var(--white-color);
+    position: relative;
+    border-radius: 7px;
+    font-size: 15px;
+    color: #4e4e4e;
+}
+
+.skills .timeLine .left-box {
+    left: 0;
+}
+
+.skills .timeLine .right-box {
+    left: 50%;
+}
+
+.skills .timeLine .box .bg {
+    position: absolute;
+    right: -26px;
+    /* top: 32px; */
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+}
+
+.skills .timeLine .right-box .bg {
+    left: -26px;
+}
+
+.skills .timeLine::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 13px;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    /* animation: moveLine 6s linear forwards; */
+}
+
+@keyframes moveLine {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.skills .timeLine.animate::after {
+    animation: moveLine 6s linear forwards;
+
+}
+
+.skills .timeLine .box .left-box-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid var(--main-color);
+    right: -15px;
+}
+
+.skills .timeLine .box .right-box-arrow {
+    height: 0;
+    width: 0;
+    position: absolute;
+    top: 10px;
+    z-index: 1;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid var(--main-color);
+    left: -15px;
+}
+
+@media (max-width:800px) {
+    .skills .timeLine::after {
+        left: 31px;
+    }
+
+    .skills .timeLine .box {
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 25px;
+    }
+
+    .skills .timeLine .box .text-box {
+        font-size: 13px;
+    }
+
+    .skills .timeLine .right-box {
+        left: 0;
+    }
+
+    .skills .timeLine .right-box .bg,
+    .skills .timeLine .left-box .bg {
+        left: 10px;
+    }
+
+    .skills .timeLine .box .left-box-arrow,
+    .skills .timeLine .box .right-box-arrow {
+        border-right: 15px solid var(--main-color);
+        border-left: 0;
+        left: -15px;
+    }
+}
+
+/* end skills */
+/* start portfolio */
+/* 
+.portfolio .portfolio-content .index {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--second-color) !important;
+}
+
+.portfolio .portfolio-content .box {
+    transition: 0.5s;
+
+}
+
+.portfolio .portfolio-content .box .caption {
+    position: absolute;
+    background-color: rgb(64 70 67);
+    color: var(--white-color);
+    width: 100%;
+    height: 70%;
+}
+
+.portfolio .portfolio-content .box .caption p {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    line-height: 2;
+}
+
+@media screen and (max-width:768px) {
+
+    .portfolio .portfolio-content .carousel-control-prev,
+    .portfolio .portfolio-content .carousel-control-next {
+        top: -200px !important;
+    }
+
+    .portfolio .portfolio-content .box .caption {
+        position: static;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        background-color: var(--primary-color);
+        color: var(--second-color);
+    }
+
+    .portfolio .portfolio-content .box .caption p {
+        width: 100% !important;
+    }
+
+    .portfolio .portfolio-content .box .caption a {
+        margin-left: 0px !important;
+    }
+
+    .portfolio .portfolio-content .index {
+        background-color: var(--second-color) !important;
+    }
+
+}
+
+@media screen and (max-width:1115px) {
+    .portfolio .portfolio-content .box .caption p {
+        font-size: 16px;
+    }
+}
+
+.portfolio .portfolio-content .box .caption a {
+    margin-left: 120px;
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--white-color);
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .portfolio .portfolio-content .box .caption a {
+        margin-left: 70px;
+    }
+}
+
+
+.portfolio .portfolio-content .box .caption a:hover {
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+.portfolio .portfolio-content .box:hover .caption {
+    bottom: 0;
+}
+
+*/
+.portfolio {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:768px) {
+
+    .portfolio .portfolio-content .arrow {
+        top: -203px;
+    }
+
+    .portfolio .portfolio-content .box .caption p {
+        width: 100% !important;
+    }
+}
+
+.portfolio .portfolio-content .arrow i {
+    color: var(--main-color);
+    font-size: 30px;
+}
+
+.portfolio .portfolio-content .nextBtn {
+    position: absolute;
+    bottom: -80px;
+}
+
+.portfolio .portfolio-content .nextBtn button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+
+}
+
+.portfolio .portfolio-content .box .caption a {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: var(--white-color);
+}
+
+.portfolio .portfolio-content .box .caption p {
+    min-height: 130px;
+    max-height: 130px;
+}
+
+.portfolio .portfolio-content .box .caption a:hover {
+    background-color: var(--white-color);
+    color: var(--main-color);
+}
+
+/* end portfolio */
+/* start footer */
+footer .container .zakaria h2 {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 70px;
+    background-color: rgb(77 190 123 / 65%);
+    color: var(--second-color);
+}
+
+footer .container .quickLinks li p::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    color: var(--main-color);
+    margin-right: 5px;
+
+}
+
+footer .container .quickLinks li a:hover,
+footer .container .contact li:hover span a,
+footer .container .contact li .networking-links a:hover {
+    cursor: pointer;
+    color: var(--main-color);
+
+}
+
+footer .container .contact li>i {
+    color: var(--main-color);
+}
+
+footer .container .contact li:first-child,
+footer .container .contact li:last-child {
+    letter-spacing: 2px;
+}
+
+/* end footer */
