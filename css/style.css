@@ -716,17 +716,15 @@ footer .container .quickLinks li p::before {
 
 }
 
-footer .container .quickLinks li a:hover,
-footer .container .contact li:hover span a,
 footer .container .contact li .networking-links a:hover {
     cursor: pointer;
-    color: var(--main-color);
+    transform: scale(1.2);
 
 }
 
-footer .container .contact li>i {
+/* footer .container .contact li>i {
     color: var(--main-color);
-}
+} */
 
 footer .container .contact li:first-child,
 footer .container .contact li:last-child {
